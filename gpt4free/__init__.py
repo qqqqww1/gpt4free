@@ -1,7 +1,6 @@
 from enum import Enum
 
 from gpt4free import forefront
-from gpt4free import quora
 from gpt4free import theb
 from gpt4free import usesless
 from gpt4free import you
@@ -51,9 +50,9 @@ class Completion:
     def __you_service(prompt: str, **kwargs) -> str:
         return you.Completion.create(prompt, **kwargs).text
 
-    @staticmethod
-    def __poe_service(prompt: str, **kwargs) -> str:
-        return quora.Completion.create(prompt=prompt, **kwargs).text
+    # @staticmethod
+    # def __poe_service(prompt: str, **kwargs) -> str:
+    #     return quora.Completion.create(prompt=prompt, **kwargs).text
 
     @staticmethod
     def __fore_front_service(prompt: str, **kwargs) -> str:
