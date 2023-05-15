@@ -1,14 +1,14 @@
 import gpt4free
-from gpt4free import Provider, quora, forefront
+from gpt4free import Provider, forefront
 
 # usage You
 response = gpt4free.Completion.create(Provider.You, prompt='Write a poem on Lionel Messi')
 print(response)
 
-# usage Poe
-token = quora.Account.create(logging=False)
-response = gpt4free.Completion.create(Provider.Poe, prompt='Write a poem on Lionel Messi', token=token, model='ChatGPT')
-print(response)
+# # usage Poe
+# token = quora.Account.create(logging=False)
+# response = gpt4free.Completion.create(Provider.Poe, prompt='Write a poem on Lionel Messi', token=token, model='ChatGPT')
+# print(response)
 
 # usage forefront
 token = forefront.Account.create(logging=False)

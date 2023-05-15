@@ -10,7 +10,6 @@ from retrying import retry
 from tls_client import Session
 from tls_client.response import Response
 
-
 class YouResponse(BaseModel):
     text: Optional[str] = None
     links: List[str] = []
