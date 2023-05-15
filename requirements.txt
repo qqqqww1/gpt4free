@@ -4,4 +4,5 @@ names
 fake-useragent
 pydantic
 retrying
+pycryptodome
 Flask==2.2.2
