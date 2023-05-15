@@ -59,12 +59,12 @@ class Completion:
         try:
             response = Completion.__make_request(client, params)
         except Exception:
-            return Completion.__get_failure_response()
+            return Completion.__get_failure_response(response.text)
 
-        if debug:
-            print('\n\n------------------\n\n')
-            print(response.text)
-            print('\n\n------------------\n\n')
+        
+        print('\n\n------------------\n\n')
+        print(response.text)
+        print('\n\n------------------\n\n')
 
         you_chat_serp_results = re.search(
             r'(?<=event: youChatSerpResults\ndata:)(.*\n)*?(?=event: )', response.text
@@ -109,8 +109,8 @@ class Completion:
         }
 
     @staticmethod
-    def __get_failure_response() -> YouResponse:
-        return YouResponse(text='Unable to fetch the response, Please try again.')
+    def __get_failure_response(text) -> YouResponse:
+        return YouResponse(text='Unable to get the response from server' + text)
 
     @staticmethod
     @retry(
