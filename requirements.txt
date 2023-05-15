@@ -1,14 +1,7 @@
-websocket-client
 requests
 tls-client
 names
-curl_cffi
-streamlit==1.21.0
 fake-useragent
-twocaptcha
 pydantic
-pymailtm
 retrying
-mailgw_temporary_email
-pycryptodome
 Flask==2.2.2
